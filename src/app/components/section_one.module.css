@@ -1,0 +1,131 @@
+.main {
+    flex-grow: 1;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url("https://lh3.googleusercontent.com/aida-public/AB6AXuCl1scdPcFcbMDERvp9MN9Z_Bop5iuJZO5NO5Opeoha1-gIWmLPsSoFABpobmr1-fjZP6tk1OA4TjSYWu3-LTs3ZpHaEc1OAiYHdYvGi-lAbJrT7j57EIIijAZ8B9MLFpBHB2MhN3Sf3drRbwlN5zHRmIWS1ctVxr_X3fMtPpR2_rY0Hey7s7U4UGd4yCqL9LCYqNZoRZSKXPxUwKKrM7w46Q9eXZ-6nTGx9zBR_h_-ZvGvaLRjxLCGrmXVHZblJddWqcT9ONEucca7");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .section {
+        min-height: 80vh;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+.heading {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .heading {
+        font-size: 3.75rem;
+    }
+}
+
+.paragraph {
+    max-width: 48rem;
+    margin: 0 auto 2rem auto;
+    font-size: 1.125rem;
+    color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+    .paragraph {
+        font-size: 1.25rem;
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.primaryBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    background-color: #008CF3;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.primaryBtn:hover {
+    background-color: rgba(19, 164, 236, 0.9);
+}
+
+.secondaryBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+    color: #111827;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.secondaryBtn:hover {
+    background-color: rgba(243, 244, 246, 0.9);
+}
+
+/* Make buttons smaller on mobile screens */
+@media (max-width: 639px) {
+    .primaryBtn,
+    .secondaryBtn {
+        height: 2.5rem;
+        /* smaller height */
+        padding: 0 1rem;
+        /* less horizontal padding */
+        font-size: 0.8rem;
+        /* slightly smaller text */
+    }
+}

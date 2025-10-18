@@ -1,0 +1,98 @@
+.section {
+    padding: 4rem 0;
+    background-color: #008CF3;
+    /* same as bg-primary */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 6rem 0;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+.heading {
+    font-size: 1.875rem;
+    /* text-3xl */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .heading {
+        font-size: 2.25rem;
+        /* text-4xl */
+    }
+}
+
+.paragraph {
+    max-width: 42rem;
+    /* max-w-2xl */
+    margin: 0 auto 2rem auto;
+    font-size: 1.125rem;
+    /* text-lg */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: #008CF3;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #e5e7eb;
+    /* hover:bg-gray-200 */
+}
+
+/* Make heading, paragraph, and button smaller on mobile screens */
+@media (max-width: 639px) {
+    .heading {
+        font-size: 1.5rem;
+        /* smaller heading */
+    }
+
+    .paragraph {
+        font-size: 0.95rem;
+        /* smaller text */
+        margin-bottom: 1.5rem;
+        /* slightly less spacing */
+    }
+
+    .button {
+        height: 2.5rem;
+        /* shorter button */
+        padding: 0 1.25rem;
+        /* less horizontal space */
+        font-size: 0.875rem;
+        /* smaller text size */
+    }
+}

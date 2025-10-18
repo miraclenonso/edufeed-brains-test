@@ -1,0 +1,114 @@
+/* === Base Styling === */
+:root {
+    --primary-color: #008CF3;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+}
+
+/* === Section === */
+.section {
+    padding: 3rem 1.5rem 3rem;
+    /* slightly reduced top padding for tighter layout */
+    background-color: rgba(246, 247, 248, 0.8);
+    margin-top: -4rem;
+    /* pulls entire section up instead of just the heading */
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem 4rem;
+        margin-top: -6rem;
+        /* matches your -7rem look */
+    }
+}
+
+/* === Container === */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* === Heading === */
+.heading {
+    font-size: clamp(1.875rem, 3vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.dark .heading {
+    color: white;
+}
+
+/* === Grid === */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* === Card === */
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(19, 164, 236, 0.15);
+}
+
+.dark .card {
+    background-color: rgba(31, 41, 55, 0.5);
+}
+
+/* === Text Elements === */
+.stat {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.dark .label {
+    color: #d1d5db;
+}
+
+.growth {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #16a34a;
+    margin-top: 0.25rem;
+}
