@@ -73,16 +73,12 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
+    background: transparent;
+    transition: transform 0.25s ease;
 }
 
-.centeredCard {
-    grid-column: span 2;
-}
-
-@media (min-width: 1024px) {
-    .centeredCard {
-        grid-column: 2 / 3;
-    }
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* === Icon === */
@@ -116,8 +112,37 @@
     color: var(--text-muted-light);
     font-size: 1rem;
     line-height: 1.6;
+    max-width: 320px;
 }
 
 .dark .cardText {
     color: var(--text-muted-dark);
+}
+
+/* === Responsive Refinement === */
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .cardTitle {
+        font-size: 1.125rem;
+    }
+
+    .cardText {
+        font-size: 0.95rem;
+    }
+
+    .iconWrapper {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
 }

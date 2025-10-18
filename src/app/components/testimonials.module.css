@@ -24,7 +24,7 @@
     font-size: clamp(1.875rem, 3vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--text-dark);
+    color: #323949;
 }
 
 .dark .heading {
