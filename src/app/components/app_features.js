@@ -59,7 +59,8 @@ const AppFeatures = () => {
             </p>
           </div>
 
-          <div className={styles.card}>
+          {/* ✅ Fixed: added centerCard */}
+          <div className={`${styles.card} ${styles.centerCard}`}>
             <div className={styles.iconWrapper}>
               <span className={`material-symbols-outlined ${styles.icon}`}>
                 menu_book
