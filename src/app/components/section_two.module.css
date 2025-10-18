@@ -12,7 +12,7 @@
   display: grid;
   gap: 2rem;
   padding: 4rem 1.5rem;
-  background: #ededee;
+  background-color: #ededee;
 }
 
 @media (min-width: 1024px) {
