@@ -9,18 +9,6 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <div className={styles.logoRow}>
-              <Image
-                src="https://iili.io/KvpPbON.png"
-                alt='Logo'
-                width={140}
-                height={33}
-                className={styles.logoImage}
-              />
-            </div>
-            <p className={styles.tagline}>Education Feeds The Brain</p>
-          </div>
-
           <div>
             <h3 className={styles.heading}>Quick Links</h3>
             <ul className={styles.list}>
