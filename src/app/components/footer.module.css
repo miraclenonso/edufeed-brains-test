@@ -29,10 +29,6 @@
     }
 }
 
-.brand {
-    grid-column: span 2;
-}
-
 .heading {
     font-weight: 700;
     margin-bottom: 1rem;
