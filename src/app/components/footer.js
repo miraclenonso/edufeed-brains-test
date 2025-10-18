@@ -8,7 +8,6 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.grid}>
-          <div className={styles.brand}>
           <div>
             <h3 className={styles.heading}>Quick Links</h3>
             <ul className={styles.list}>
