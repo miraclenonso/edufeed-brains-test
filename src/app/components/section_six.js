@@ -9,7 +9,7 @@ export default function SectionSix() {
         </h2>
         <p className={styles.paragraph}>
           Join thousands of students who are already benefiting
-          from Edufeed Brains' innovative educational solutions.
+          from Edufeed Brains&apos; innovative educational solutions.
         </p>
         <a href="#" className={styles.button}>
           Get Started

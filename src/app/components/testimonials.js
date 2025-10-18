@@ -33,8 +33,8 @@ export default function Testimonials() {
           </div>
 
           <p className={styles.text}>
-            "Edufeed Brains has transformed my learning experience. The app is
-            user-friendly and the content is top-notch."
+            &quot;Edufeed Brains has transformed my learning experience. The app is
+            user-friendly and the content is top-notch.&quot;
           </p>
         </div>
 
@@ -65,8 +65,8 @@ export default function Testimonials() {
           </div>
 
           <p className={styles.text}>
-            "The web portal is a great resource for my studies. I especially
-            appreciate the interactive quizzes."
+            &quot;The web portal is a great resource for my studies. I especially
+            appreciate the interactive quizzes.&quot;
           </p>
         </div>
 
@@ -95,8 +95,8 @@ export default function Testimonials() {
           </div>
 
           <p className={styles.text}>
-            "Our school has seen significant improvements in student performance
-            since partnering with Edufeed Brains."
+            &quot;Our school has seen significant improvements in student performance
+            since partnering with Edufeed Brains.&quot;
           </p>
         </div>
       </div>
