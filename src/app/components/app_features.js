@@ -59,7 +59,7 @@ const AppFeatures = () => {
             </p>
           </div>
 
-          <div className={[styles.card, {ma}]} style={{marginBottom: 10}}>
+          <div className={styles.card} style={{marginBottom: 10}}>
             <div className={styles.iconWrapper}>
               <span className={`material-symbols-outlined ${styles.icon}`}>
                 menu_book
