@@ -40,42 +40,18 @@
     margin-bottom: 1rem;
 }
 
-.logo {
-    height: 2rem;
-    width: 2rem;
-    color: #008CF3;
-}
-
 .logoImage {
     object-fit: cover;
-}
-
-@media (prefers-color-scheme: dark) {
-    .title {
-        color: white;
-    }
 }
 
 .tagline {
     color: #6b7280;
 }
 
-@media (prefers-color-scheme: dark) {
-    .tagline {
-        color: #9ca3af;
-    }
-}
-
 .heading {
     font-weight: 700;
     margin-bottom: 1rem;
     color: #111827;
-}
-
-@media (prefers-color-scheme: dark) {
-    .heading {
-        color: white;
-    }
 }
 
 .list {
@@ -98,28 +74,12 @@
     color: #008CF3;
 }
 
-@media (prefers-color-scheme: dark) {
-    .link {
-        color: #9ca3af;
-    }
-
-    .link:hover {
-        color: #008CF3;
-    }
-}
-
 .bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-top: 1px solid rgba(229, 231, 235, 0.5);
     padding-top: 2rem;
-}
-
-@media (prefers-color-scheme: dark) {
-    .bottom {
-        border-top: 1px solid rgba(55, 65, 81, 0.5);
-    }
 }
 
 @media (min-width: 640px) {
@@ -133,12 +93,6 @@
     font-size: 0.875rem;
     color: #6b7280;
     margin-bottom: 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-    .copy {
-        color: #9ca3af;
-    }
 }
 
 .socials {
