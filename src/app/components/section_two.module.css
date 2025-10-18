@@ -12,7 +12,7 @@
   display: grid;
   gap: 2rem;
   padding: 4rem 1.5rem;
-  background: rgba(246, 247, 248, 0.8);
+  background: #ededee;
 }
 
 @media (min-width: 1024px) {

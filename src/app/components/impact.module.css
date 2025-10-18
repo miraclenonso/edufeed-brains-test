@@ -10,7 +10,7 @@
 .section {
     padding: 3rem 1.5rem 3rem;
     /* slightly reduced top padding for tighter layout */
-    background-color: rgba(246, 247, 248, 0.8);
+    background-color: #ededee;
     margin-top: -4rem;
     /* pulls entire section up instead of just the heading */
     position: relative;

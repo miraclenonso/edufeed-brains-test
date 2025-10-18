@@ -1,6 +1,7 @@
 .section {
     padding-top: 3rem;
     padding-bottom: 3rem;
+    background-color: #ededee;
 }
 
 @media (min-width: 640px) {
