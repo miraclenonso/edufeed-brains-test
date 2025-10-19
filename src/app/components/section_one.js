@@ -18,7 +18,7 @@ export default function SectionOne() {
           </p>
           <div className={styles.buttonGroup}>
             <a href="#" className={styles.primaryBtn}>
-              Explore Blog
+              Explore Our Blog
             </a>
             <a href="#" className={styles.secondaryBtn}>
               <Image
