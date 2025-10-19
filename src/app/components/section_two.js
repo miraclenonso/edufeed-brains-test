@@ -6,17 +6,22 @@ const SectionTwo = () => {
     <section className={styles.sectionWrapper}>
       {/* === The Problem === */}
       <div className={styles.card}>
+        <div className={styles.iconWrapper}>
+          <span className="material-symbols-outlined">error</span>
+        </div>
         <h2 className={styles.heading}>The Problem</h2>
         <p className={styles.paragraph}>
           Many Nigerian students lack access to high-quality education. While some
           institutions offer excellent learning experiences, their tuition fees are
-          extremely high, making them inaccessible to most learners. As a result, many
-          students depend on exam malpractice instead of true understanding.
+          extremely high, making them inaccessible to most learners.
         </p>
       </div>
 
       {/* === Our Solution === */}
       <div className={styles.card}>
+        <div className={styles.iconWrapper}>
+          <span className="material-symbols-outlined">lightbulb</span>
+        </div>
         <h2 className={styles.heading}>Our Solution</h2>
         <p className={styles.paragraph}>
           Edufeed Brains provides free, high-quality educational resources designed to
@@ -27,6 +32,9 @@ const SectionTwo = () => {
 
       {/* === Our Mission === */}
       <div className={styles.card}>
+        <div className={styles.iconWrapper}>
+          <span className="material-symbols-outlined">flag</span>
+        </div>
         <h2 className={styles.heading}>Our Mission</h2>
         <p className={styles.paragraph}>
           Our mission is to empower millions of students and significantly reduce the
