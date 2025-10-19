@@ -1,7 +1,6 @@
 .section {
     padding: 4rem 0;
-    background-color: #008CF3;
-    /* same as bg-primary */
+    background-color: #008cf3;
     text-align: center;
 }
 
@@ -31,7 +30,6 @@
 
 .heading {
     font-size: 1.875rem;
-    /* text-3xl */
     font-weight: 700;
     color: white;
     margin-bottom: 1rem;
@@ -40,59 +38,68 @@
 @media (min-width: 768px) {
     .heading {
         font-size: 2.25rem;
-        /* text-4xl */
     }
 }
 
 .paragraph {
     max-width: 42rem;
-    /* max-w-2xl */
     margin: 0 auto 2rem auto;
     font-size: 1.125rem;
-    /* text-lg */
     color: rgba(255, 255, 255, 0.9);
 }
 
+/* === Button === */
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.6rem;
+    /* space between icon and text */
     height: 3rem;
     padding: 0 2rem;
     font-size: 1rem;
     font-weight: 700;
+    text-align: left;
     border-radius: 0.5rem;
     background-color: white;
-    color: #008CF3;
+    color: #008cf3;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover {
     background-color: #e5e7eb;
-    /* hover:bg-gray-200 */
 }
 
-/* Make heading, paragraph, and button smaller on mobile screens */
+/* Icon styling */
+.icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(38%) sepia(85%) saturate(3900%) hue-rotate(192deg) brightness(100%) contrast(102%);
+}
+
+/* Responsive */
 @media (max-width: 639px) {
     .heading {
         font-size: 1.5rem;
-        /* smaller heading */
     }
 
     .paragraph {
         font-size: 0.95rem;
-        /* smaller text */
         margin-bottom: 1.5rem;
-        /* slightly less spacing */
     }
 
     .button {
         height: 2.5rem;
-        /* shorter button */
         padding: 0 1.25rem;
-        /* less horizontal space */
         font-size: 0.875rem;
-        /* smaller text size */
+        gap: 0.5rem;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) saturate(100%) invert(38%) sepia(85%) saturate(3900%) hue-rotate(192deg) brightness(100%) contrast(102%);
     }
 }

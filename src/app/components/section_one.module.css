@@ -102,6 +102,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     height: 3rem;
     padding: 0 1.5rem;
     font-size: 1rem;
@@ -117,15 +118,26 @@
     background-color: rgba(243, 244, 246, 0.9);
 }
 
+/* Play Store icon style */
+.playIcon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(38%) sepia(85%) saturate(3900%) hue-rotate(192deg) brightness(100%) contrast(102%);
+}
+
 /* Make buttons smaller on mobile screens */
 @media (max-width: 639px) {
+
     .primaryBtn,
     .secondaryBtn {
         height: 2.5rem;
-        /* smaller height */
         padding: 0 1rem;
-        /* less horizontal padding */
         font-size: 0.8rem;
-        /* slightly smaller text */
+    }
+
+    .playIcon {
+        width: 18px;
+        height: 18px;
     }
 }

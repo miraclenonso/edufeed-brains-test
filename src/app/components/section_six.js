@@ -1,4 +1,5 @@
-import styles from './section_six.module.css';
+import styles from "./section_six.module.css";
+import Image from "next/image";
 
 export default function SectionSix() {
   return (
@@ -8,11 +9,18 @@ export default function SectionSix() {
           Ready to Transform Your Learning Journey?
         </h2>
         <p className={styles.paragraph}>
-          Join thousands of students who are already benefiting
-          from Edufeed Brains&apos; innovative educational solutions.
+          Join thousands of students who are already benefiting from Edufeed
+          Brains&apos; innovative educational solutions.
         </p>
         <a href="#" className={styles.button}>
-          Get Started
+          <Image
+            src="https://iili.io/K8p9UI2.png"
+            alt="Google Play Icon"
+            width={24}
+            height={24}
+            className={styles.icon}
+          />
+          <span>Get on<br/>Google Play</span>
         </a>
       </div>
     </section>

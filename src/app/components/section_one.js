@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./section_one.module.css";
+import Image from "next/image";
 
 export default function SectionOne() {
   return (
@@ -20,6 +21,13 @@ export default function SectionOne() {
               Explore Our Blog
             </a>
             <a href="#" className={styles.secondaryBtn}>
+              <Image
+                src="https://iili.io/K8p9UI2.png"
+                alt="Google Play Icon"
+                width={20}
+                height={20}
+                className={styles.playIcon}
+              />
               Download Our App
             </a>
           </div>
