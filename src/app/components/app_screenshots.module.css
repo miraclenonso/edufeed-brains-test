@@ -120,27 +120,3 @@
     font-weight: 500;
     color: #6b7280;
 }
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    .section {
-        background-color: #1a1a1a;
-    }
-
-    .title {
-        color: #e5e7eb;
-    }
-
-    .phoneFrame {
-        border-color: #374151;
-        background-color: #374151;
-    }
-
-    .notch {
-        background-color: #374151;
-    }
-
-    .caption {
-        color: #9ca3af;
-    }
-}
