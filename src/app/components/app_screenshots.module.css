@@ -1,0 +1,146 @@
+/* Overall Section */
+.section {
+    padding: 5rem 0;
+    background-color: #ededee;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    .section {
+        padding: 7rem 0;
+    }
+}
+
+/* Center Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Section Header */
+.header {
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.02em;
+}
+
+/* Smaller screens (mobile) */
+@media (max-width: 639px) {
+    .title {
+        font-size: 1.5rem;
+        /* reduce size here */
+    }
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Wrapper: vertical on mobile, horizontal on desktop */
+.screenshotsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .screenshotsWrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 4rem;
+    }
+}
+
+/* Screenshot Item */
+.screenshotItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Phone Frame */
+.phoneFrame {
+    position: relative;
+    height: 480px;
+    width: 240px;
+    border-radius: 2.5rem;
+    border: 10px solid #1f2937;
+    background-color: #1f2937;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Notch */
+.notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1rem;
+    width: 4rem;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    background-color: #1f2937;
+}
+
+/* Image Container */
+.imageWrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+    position: relative;
+}
+
+/* Image Style */
+.image {
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+/* Caption */
+.caption {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .section {
+        background-color: #1a1a1a;
+    }
+
+    .title {
+        color: #e5e7eb;
+    }
+
+    .phoneFrame {
+        border-color: #374151;
+        background-color: #374151;
+    }
+
+    .notch {
+        background-color: #374151;
+    }
+
+    .caption {
+        color: #9ca3af;
+    }
+}

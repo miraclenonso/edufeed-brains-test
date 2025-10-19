@@ -4,6 +4,7 @@ import SectionTwo from "./components/section_two"
 import Impact from "./components/impact"
 import Testimonials from "./components/testimonials"
 import AppFeatures from "./components/app_features"
+import AppScreenshots from "./components/app_screenshots"
 import Blog from "./components/blog"
 import SectionSix from "./components/section_six"
 import Footer from "./components/footer"
@@ -15,6 +16,7 @@ export default function Home() {
       <SectionOne/>
       <SectionTwo/>
       <AppFeatures/>
+      <AppScreenshots/>
       <Impact/>
       <Testimonials/>
       <Blog/>
