@@ -18,7 +18,7 @@ export default function SectionOne() {
           </p>
           <div className={styles.buttonGroup}>
             <a href="#" className={styles.primaryBtn}>
-              Explore Our Blog
+              Explore Blog
             </a>
             <a href="#" className={styles.secondaryBtn}>
               <Image
@@ -28,7 +28,7 @@ export default function SectionOne() {
                 height={20}
                 className={styles.playIcon}
               />
-              Download Our App
+              Download App
             </a>
           </div>
         </div>
