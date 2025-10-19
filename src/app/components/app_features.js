@@ -7,7 +7,7 @@ const AppFeatures = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Key Features</h2>
+          <h2 className={styles.title}>Our App Key Features</h2>
         </div>
 
         <div className={styles.grid}>
