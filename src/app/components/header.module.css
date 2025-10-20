@@ -27,7 +27,7 @@
     object-fit: cover;
 }
 
-/* Hide nav by default (mobile) */
+/* Default nav hidden for mobile */
 .nav {
     display: none;
 }
@@ -99,9 +99,57 @@
     filter: brightness(0) saturate(100%) invert(48%) sepia(73%) saturate(2533%) hue-rotate(178deg) brightness(98%) contrast(101%);
 }
 
-/* Hide menu icon on ≥768px (desktop/tablet) */
+/* Hide menu icon on ≥768px */
 @media (min-width: 768px) {
     .menuImage {
         display: none;
+    }
+}
+
+/* ===== MOBILE DROPDOWN (overlay below header) ===== */
+.mobileMenu {
+    display: none;
+}
+
+/* Only show on mobile */
+@media (max-width: 767px) {
+    .mobileMenu {
+        display: flex;
+        flex-direction: column;
+        background-color: #ededee;
+        position: absolute;
+        top: 100%;
+        /* appear below header */
+        left: 0;
+        right: 0;
+        z-index: 40;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.35s ease;
+        border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+    }
+
+    .menuOpen {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .mobileMenu a {
+        padding: 0.75rem 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #323949;
+        text-decoration: none;
+        font-family: var(--font-geist-mono), sans-serif;
+        border-top: 1px solid rgba(229, 231, 235, 0.7);
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .mobileMenu a:hover {
+        background-color: #008cf3;
+        color: #fff;
     }
 }
