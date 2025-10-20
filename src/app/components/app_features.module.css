@@ -31,20 +31,17 @@
 /* === Header === */
 .header {
     text-align: center;
-    max-width: 700px;
+    max-width: 300px;
     margin: 0 auto 4rem;
+    font-family: var(--font-geist-mono), sans-serif;
 }
 
 .title {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-geist-mono), sans-serif;
     font-weight: 700;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: 1.2rem;
     color: #323949;
     letter-spacing: -0.02em;
-}
-
-.dark .title {
-    color: var(--text-dark);
 }
 
 /* === Grid === */
@@ -60,11 +57,17 @@
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
     }
+    .title {
+        font-size: 1.6rem;
+    }
 }
 
 @media (min-width: 1024px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .title {
+        font-size: 1.6rem;
     }
 }
 
@@ -124,7 +127,8 @@
 .cardTitle {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--text-light);
+    color: #323949;
+    font-family: var(--font-geist-mono), sans-serif;
 }
 
 .dark .cardTitle {

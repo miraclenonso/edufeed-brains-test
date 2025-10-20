@@ -27,10 +27,10 @@
 
 /* Title */
 .title {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-geist-mono), sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #323949;
     letter-spacing: -0.02em;
 }
 
@@ -119,4 +119,5 @@
     font-size: 1rem;
     font-weight: 500;
     color: #6b7280;
+    font-family: var(--font-geist-mono), sans-serif;
 }

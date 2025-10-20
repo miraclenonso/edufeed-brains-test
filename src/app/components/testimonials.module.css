@@ -21,14 +21,17 @@
 /* === Heading === */
 .heading {
     text-align: center;
-    font-size: clamp(1.875rem, 3vw, 2.5rem);
+    font-size: 1.4rem;
     font-weight: 700;
+    font-family: var(--font-geist-mono), sans-serif;
     margin-bottom: 2rem;
     color: #323949;
 }
 
-.dark .heading {
-    color: white;
+@media (min-width: 768px) {
+    .heading {
+        font-size: 1.8rem;
+    }
 }
 
 /* === Grid === */
@@ -52,11 +55,6 @@
     padding: 1.5rem;
 }
 
-.dark .card {
-    background-color: rgba(24, 24, 27, 0.7);
-    border: 1px solid rgba(0, 140, 243, 0.3);
-}
-
 /* === Profile === */
 .profile {
     display: flex;
@@ -74,34 +72,38 @@
 
 .name {
     font-weight: 500;
-    color: var(--text-dark);
-}
-
-.dark .name {
-    color: #fafafa;
+    color: #323949;
+    font-family: var(--font-geist-mono), sans-serif;
 }
 
 .role {
     font-size: 0.875rem;
-    color: var(--text-light);
-}
-
-.dark .role {
-    color: #a1a1aa;
+    font-family: var(--font-geist-mono), sans-serif;
+    color: #323949;
 }
 
 /* === Stars === */
 .stars {
     display: flex;
     gap: 0.25rem;
-    color: var(--primary-color);
     margin: 1rem 0;
+}
+
+/* Filled and Empty stars */
+.filled {
+    color: var(--primary-color);
+}
+
+.empty {
+    color: #d1d5db;
+    /* muted gray for empty */
 }
 
 /* === Text === */
 .text {
     color: #3f3f46;
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 .dark .text {

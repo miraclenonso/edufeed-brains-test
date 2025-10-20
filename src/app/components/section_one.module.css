@@ -44,6 +44,7 @@
     font-size: 2.2rem;
     font-weight: 900;
     letter-spacing: -0.02em;
+    font-family: var(--font-geist-sans), sans-serif;
     margin-bottom: 1rem;
 }
 
@@ -62,7 +63,8 @@
 .paragraph {
     max-width: 48rem;
     margin: 0 auto 2rem auto;
-    font-size: 1.125rem;
+    font-size: 1rem;
+    font-family: var(--font-geist-mono), sans-serif;
     color: #e5e7eb;
 }
 
@@ -91,6 +93,7 @@
     background-color: #008CF3;
     color: white;
     text-decoration: none;
+    font-family: var(--font-geist-mono), sans-serif;
     transition: background-color 0.3s;
 }
 
@@ -111,6 +114,7 @@
     background-color: #f3f4f6;
     color: #111827;
     text-decoration: none;
+    font-family: var(--font-geist-mono), sans-serif;
     transition: background-color 0.3s;
 }
 

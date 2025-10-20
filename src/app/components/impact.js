@@ -10,20 +10,20 @@ export default function Impact() {
         <div className={styles.grid}>
           <div className={styles.card}>
             <h3 className={styles.stat}>500K+</h3>
-            <p className={styles.label}>Students Reached</p>
-            <span className={styles.growth}>+20% YoY Growth</span>
+            <p className={styles.label}>Students Engaged</p>
+            <span className={styles.growth}>Learning Across Nigeria</span>
           </div>
 
           <div className={styles.card}>
-            <h3 className={styles.stat}>100+</h3>
-            <p className={styles.label}>Schools Partnered</p>
-            <span className={styles.growth}>+15% This Quarter</span>
+            <h3 className={styles.stat}>10K+</h3>
+            <p className={styles.label}>Questions Practiced</p>
+            <span className={styles.growth}>Through CBT and Quizzes</span>
           </div>
 
           <div className={styles.card}>
             <h3 className={styles.stat}>95%</h3>
-            <p className={styles.label}>Positive Feedback</p>
-            <span className={styles.growth}>From User Surveys</span>
+            <p className={styles.label}>User Satisfaction</p>
+            <span className={styles.growth}>Based on App Reviews</span>
           </div>
         </div>
       </div>

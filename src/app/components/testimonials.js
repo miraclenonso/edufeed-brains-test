@@ -24,12 +24,13 @@ export default function Testimonials() {
             </div>
           </div>
 
+          {/* 5 filled stars */}
           <div className={styles.stars}>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className={`material-symbols-outlined ${styles.filled}`}>
+                star
+              </span>
+            ))}
           </div>
 
           <p className={styles.text}>
@@ -54,14 +55,18 @@ export default function Testimonials() {
             </div>
           </div>
 
+          {/* 4 filled, 1 empty */}
           <div className={styles.stars}>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl text-zinc-400 dark:text-zinc-600">
-              star
-            </span>
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                className={`material-symbols-outlined ${
+                  i < 4 ? styles.filled : styles.empty
+                }`}
+              >
+                star
+              </span>
+            ))}
           </div>
 
           <p className={styles.text}>
@@ -86,12 +91,13 @@ export default function Testimonials() {
             </div>
           </div>
 
+          {/* 5 filled stars */}
           <div className={styles.stars}>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
-            <span className="material-symbols-outlined !text-xl">star</span>
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className={`material-symbols-outlined ${styles.filled}`}>
+                star
+              </span>
+            ))}
           </div>
 
           <p className={styles.text}>
@@ -102,4 +108,4 @@ export default function Testimonials() {
       </div>
     </section>
   );
-};
+}

@@ -14,17 +14,13 @@
 .heading {
     margin-bottom: 2rem;
     text-align: center;
-    font-size: 1.875rem;
+    font-size: 1.4rem;
     /* text-3xl */
     font-weight: 700;
+    font-family: var(--font-geist-mono), sans-serif;
     letter-spacing: -0.01em;
-    color: #18181b;
+    color: #323949;
     /* zinc-900 */
-}
-
-.dark .heading {
-    color: #fafafa;
-    /* zinc-50 */
 }
 
 .grid {
@@ -36,6 +32,9 @@
 @media (min-width: 768px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .heading {
+        font-size: 1.8rem;
     }
 }
 
@@ -56,22 +55,12 @@
 .title {
     font-size: 1.125rem;
     font-weight: 500;
-    color: #18181b;
+    color: #323949;
     /* zinc-900 */
-}
-
-.dark .title {
-    color: #fafafa;
-    /* zinc-50 */
 }
 
 .desc {
     font-size: 0.875rem;
     color: #52525b;
     /* zinc-600 */
-}
-
-.dark .desc {
-    color: #a1a1aa;
-    /* zinc-400 */
 }
