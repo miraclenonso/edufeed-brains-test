@@ -10,6 +10,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
+        {/* Logo */}
         <div className={styles.logoSection}>
           <Image
             src="https://iili.io/KvpPbON.png"
@@ -20,17 +21,20 @@ export default function Header() {
           />
         </div>
 
-        <nav className={`${styles.nav} ${menuOpen ? styles.showMenu : ""}`}>
+        {/* Desktop Nav */}
+        <nav className={styles.nav}>
           <a href="#">Home</a>
           <a href="#">Blog</a>
           <a href="#">About Us</a>
           <a href="#">Contact</a>
         </nav>
 
+        {/* Action Section */}
         <div className={styles.actionSection}>
           <a href="#" className={styles.downloadBtn}>
             Download App
           </a>
+
           <Image
             src="https://iili.io/K8HJc9S.png"
             alt="menu icon"
@@ -42,8 +46,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Overlay dropdown menu for mobile */}
+      {/* Mobile Menu (appears BELOW header) */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ""}`}>
+        <hr className={styles.menuDivider} />
         <a href="#">Home</a>
         <a href="#">Blog</a>
         <a href="#">About Us</a>
