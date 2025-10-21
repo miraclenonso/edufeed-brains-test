@@ -11,7 +11,6 @@ import Footer from "./components/footer"
 export default function Home() {
   return (
     <div>
-      <Header/>
       <SectionOne/>
       <SectionTwo/>
       <AppFeatures/>
@@ -19,7 +18,6 @@ export default function Home() {
       <Impact/>
       <Testimonials/>
       <SectionSix/>
-      <Footer/>
     </div>
   )
 }

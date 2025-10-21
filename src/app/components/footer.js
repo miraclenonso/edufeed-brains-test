@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h3 className={styles.heading}>Company</h3>
             <ul className={styles.list}>
-              <li><a href="#" className={styles.link}>About Us</a></li>
+              <li><a href="./about-us" className={styles.link}>About Us</a></li>
               <li><a href="#" className={styles.link}>Contact</a></li>
             </ul>
           </div>
