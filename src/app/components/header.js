@@ -24,7 +24,7 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className={styles.nav}>
           <a href="./">Home</a>
-          <a href="#">Blog</a>
+          <a href="./blog/1">Blog</a>
           <a href="./about">About Us</a>
           <a href="./contact-us">Contact</a>
         </nav>
@@ -50,7 +50,7 @@ export default function Header() {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ""}`}>
         <hr className={styles.menuDivider} />
         <a href="./">Home</a>
-        <a href="#">Blog</a>
+        <a href="./blog/1">Blog</a>
         <a href="./about">About Us</a>
         <a href="./contact-us">Contact</a>
       </div>

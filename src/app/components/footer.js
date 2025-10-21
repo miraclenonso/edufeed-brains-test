@@ -12,7 +12,7 @@ export default function Footer() {
             <h3 className={styles.heading}>Quick Links</h3>
             <ul className={styles.list}>
               <li><a href="./" className={styles.link}>Home</a></li>
-              <li><a href="#" className={styles.link}>Blog</a></li>
+              <li><a href="./blog/1" className={styles.link}>Blog</a></li>
             </ul>
           </div>
 
