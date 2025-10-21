@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h3 className={styles.heading}>Company</h3>
             <ul className={styles.list}>
-              <li><a href="./about-us" className={styles.link}>About Us</a></li>
+              <li><a href="./about" className={styles.link}>About Us</a></li>
               <li><a href="./contact-us" className={styles.link}>Contact</a></li>
             </ul>
           </div>
@@ -27,8 +27,8 @@ export default function Footer() {
           <div>
             <h3 className={styles.heading}>Legal</h3>
             <ul className={styles.list}>
-              <li><a href="#" className={styles.link}>Privacy Policy</a></li>
-              <li><a href="#" className={styles.link}>Terms of Service</a></li>
+              <li><a href="./privacy-policy" className={styles.link}>Privacy Policy</a></li>
+              <li><a href="./disclaimer" className={styles.link}>Disclaimer</a></li>
             </ul>
           </div>
         </div>

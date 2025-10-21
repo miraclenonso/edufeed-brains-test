@@ -35,8 +35,18 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Make the header stay fixed at the top */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* ensures header stays above content */
+}
+
+/* Add space so page content doesn’t hide behind header */
+.main-content {
+  margin-top: 0px;
+  /* Adjust based on your header height */
 }

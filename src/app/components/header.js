@@ -25,7 +25,7 @@ export default function Header() {
         <nav className={styles.nav}>
           <a href="./">Home</a>
           <a href="#">Blog</a>
-          <a href="./about-us">About Us</a>
+          <a href="./about">About Us</a>
           <a href="./contact-us">Contact</a>
         </nav>
 
@@ -51,7 +51,7 @@ export default function Header() {
         <hr className={styles.menuDivider} />
         <a href="./">Home</a>
         <a href="#">Blog</a>
-        <a href="./about-us">About Us</a>
+        <a href="./about">About Us</a>
         <a href="./contact-us">Contact</a>
       </div>
     </header>

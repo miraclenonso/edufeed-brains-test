@@ -1,0 +1,95 @@
+.container {
+    background-color: #ededee;
+    font-family: "Lexend", sans-serif;
+    color: #323949;
+    padding: 40px 16px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 48px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #323949;
+    font-family: var(--font-geist-mono), sans-serif;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #323949;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-family: var(--font-geist-mono), sans-serif;
+}
+
+/* Policy Content */
+.policyContent {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content {
+    line-height: 1.7;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.content h2,
+.content h3 {
+    margin-top: 1.5rem;
+    color: #323949;
+    font-family: var(--font-geist-mono), sans-serif;
+}
+
+.content p {
+    margin-bottom: 1rem;
+}
+
+.content a {
+    color: #1193d4;
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .policyContent {
+        padding: 3rem;
+    }
+}

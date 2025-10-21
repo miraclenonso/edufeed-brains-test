@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "600", "700"], // add the weights you plan to use
+  weight: ["400", "600", "700"],
 });
 
 export const metadata = {
@@ -28,18 +28,25 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Load Google Material Symbols */}
+        {/* Google Material Symbols */}
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
       </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        {/* Fixed Header */}
+        <div className="fixed-header">
+          <Header />
+        </div>
+
+        {/* Main content */}
+        <main className="main-content">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );
