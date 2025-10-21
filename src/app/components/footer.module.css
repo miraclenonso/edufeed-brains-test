@@ -16,16 +16,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
-    text-align: center;
-    /* Centers items on small screens too */
+    text-align: left;
+    /* 👈 Left aligned for mobile */
 }
 
 @media (min-width: 768px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
-        /* 3 equal sections (Quick Links, Company, Legal) */
+        /* 3 equal sections */
         justify-content: center;
         text-align: center;
+        /* 👈 Centered for tablet and above */
     }
 }
 
@@ -33,9 +34,7 @@
     .grid {
         grid-template-columns: repeat(3, 1fr);
         justify-content: center;
-        /* Centers the 3 columns */
         max-width: 800px;
-        /* Centers content block and limits width */
         margin-left: auto;
         margin-right: auto;
         text-align: center;
