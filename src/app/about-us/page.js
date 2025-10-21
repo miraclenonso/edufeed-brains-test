@@ -10,7 +10,7 @@ export default function AboutPage() {
     { title: "Excellence", text: "We are committed to the highest standards of quality in everything we do." },
     { title: "Collaboration", text: "We believe in the power of teamwork and working together to achieve common goals." },
     { title: "Innovation", text: "We embrace new ideas and approaches to enhance the learning experience." },
-    { title: "Empathy", text: "We care deeply about our students' well-being and success." },
+    { title: "Empathy", text: "We care deeply about our students\' well-being and success." },
   ];
 
   const team = [
@@ -41,7 +41,7 @@ export default function AboutPage() {
             <h3 className={styles.subheading}>Our Story</h3>
             <p className={styles.paragraph}>
               Edufeed Brains was founded in 2015 with a mission to transform education in Nigeria.
-              Starting as a small tutoring center, we've grown into a leading educational brand,
+              Starting as a small tutoring center, w&apos;ve grown into a leading educational brand,
               offering a wide range of courses and resources to help students succeed.
             </p>
           </div>
