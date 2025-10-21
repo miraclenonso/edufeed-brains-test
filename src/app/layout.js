@@ -19,11 +19,6 @@ const poppins = Poppins({
   weight: ["400", "600", "700"],
 });
 
-export const metadata = {
-  title: "Edufeed Brains",
-  description: "Education feeds the brain",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -3,15 +3,13 @@ import styles from "./page.module.css";
 
 export const metadata = {
   title: "Disclaimer - Edufeed Brains",
-  description:
-    "Read the official disclaimer of Edufeed Brains. Learn about our content accuracy, limitations, and the extent of responsibility regarding information shared on our platform.",
 };
 
 // Fetch Disclaimer page from WordPress REST API
 async function getDisclaimer() {
   const res = await fetch(
     "https://edufeedbrains.com/wp-json/wp/v2/pages?slug=disclaimer",
-    { next: { revalidate: 60 } } // Revalidate every hour (for caching)
+    { cache: "no-store" }
   );
 
   if (!res.ok) {

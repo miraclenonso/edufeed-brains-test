@@ -3,14 +3,13 @@ import styles from "./page.module.css";
 
 export const metadata = {
   title: "Privacy Policy - Edufeed Brains",
-  description: "Read the privacy policy of Edufeed Brains.",
 };
 
 // Fetch privacy policy from WordPress REST API
 async function getPrivacyPolicy() {
   const res = await fetch(
     "https://edufeedbrains.com/wp-json/wp/v2/pages?slug=privacy-policy",
-    { next: { revalidate: 60 } } // Revalidate every hour
+    { cache: "no-store" }
   );
 
   if (!res.ok) {
