@@ -26,7 +26,7 @@ export default function Header() {
           <a href="./">Home</a>
           <a href="#">Blog</a>
           <a href="./about-us">About Us</a>
-          <a href="#">Contact</a>
+          <a href="./contact-us">Contact</a>
         </nav>
 
         {/* Action Section */}
@@ -52,7 +52,7 @@ export default function Header() {
         <a href="./">Home</a>
         <a href="#">Blog</a>
         <a href="./about-us">About Us</a>
-        <a href="#">Contact</a>
+        <a href="./contact-us">Contact</a>
       </div>
     </header>
   );
