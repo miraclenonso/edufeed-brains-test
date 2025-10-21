@@ -17,12 +17,12 @@ export default function AboutPage() {
     {
       name: "Michael Olorunfemi",
       role: "Co-CEO & Founder",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdoeJLPBnjb7tcdKS6yUr6EfgfpUojC6FdxyS7MpBPZhoa4EpFozBy0q7wHSm2mTASaW0qaffJLiipIaV8T68yLEGNYTY7RYjj70iTcvEPYjhIOzbNBb_YLZdoVqYfb6IMT1w4Rl-wcErohBkzWLck1pNfbOYdvNNpV8D_VGLMWRAP0gPWoMBz_Orh_Tcs6DWCACOZuwrBaKKBvNXeTgw3pOQfb1F3MjiBU8H8ioPCuBi2widq-fHrCj_Tu4yvfAFdVvFRoQYKJsHl",
+      img: "https://iili.io/KSSRq79.jpg",
     },
     {
       name: "Miracle Nonso",
       role: "Co-CEO & Founder",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBnz3xXGBtWGykqZU5cwGj0chkH3VmxJZmkeAkhXs3gY-WOgGS9tB-cFmgOX3zU_h3p2Pyb0KaPECEWIkqRp0iyWcWxKr-ufRt1f2-EaoXjQdyZxphswq0Tj5RHk7GUPzf2apMxqcOCO2aiUFSAAyaauOQQY_8Y0Ye9zSnW8CG96J2iOjfA_zLR09j7jRx5fJcxN70nEqqUqV6LTw7zir43syYM5t5N9q3VK1J6C0OwkeBKAD9A4s5zBLv2XVvV70f2j16aml17Q1NQ",
+      img: "https://iili.io/KSScFRI.jpg",
     },
   ];
 
