@@ -10,7 +10,7 @@ export const metadata = {
 async function getPrivacyPolicy() {
   const res = await fetch(
     "https://edufeedbrains.com/wp-json/wp/v2/pages?slug=privacy-policy",
-    { next: { revalidate: 3600 } } // Revalidate every hour
+    { next: { revalidate: 60 } } // Revalidate every hour
   );
 
   if (!res.ok) {

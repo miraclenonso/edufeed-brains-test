@@ -11,7 +11,7 @@ export const metadata = {
 async function getDisclaimer() {
   const res = await fetch(
     "https://edufeedbrains.com/wp-json/wp/v2/pages?slug=disclaimer",
-    { next: { revalidate: 3600 } } // Revalidate every hour (for caching)
+    { next: { revalidate: 60 } } // Revalidate every hour (for caching)
   );
 
   if (!res.ok) {
