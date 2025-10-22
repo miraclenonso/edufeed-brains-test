@@ -20,7 +20,7 @@ export default function SectionOne() {
             <a href="#" className={styles.primaryBtn}>
               Explore Our Blog
             </a>
-            <a href="#" className={styles.secondaryBtn}>
+            <a href="https://bit.ly/edufeed-brains-app-andriod" className={styles.secondaryBtn}>
               <Image
                 src="https://iili.io/K8p9UI2.png"
                 alt="Google Play Icon"

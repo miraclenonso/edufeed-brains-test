@@ -35,9 +35,9 @@ export default function Header() {
 
         {/* Action Section */}
         <div className={styles.actionSection}>
-          <Link href="#" className={styles.downloadBtn}>
+          <a href="https://bit.ly/edufeed-brains-app-andriod" className={styles.downloadBtn}>
             Download App
-          </Link>
+          </a>
 
           <Image
             src="https://iili.io/K8HJc9S.png"
