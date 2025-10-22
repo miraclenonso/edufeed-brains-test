@@ -208,7 +208,7 @@ export default function BlogPage() {
                       <div className={styles.postContent}>
                         <p className={styles.postMeta}>
                           {post._embedded?.author?.[0]?.name || "Edufeed Brains"} |{" "}
-                          {new Date(post.date).toLocaleDateString()}
+                          {new Date(post.date).toISOString().split("T")[0]}
                         </p>
 
                         <h2 className={styles.postTitle}>
