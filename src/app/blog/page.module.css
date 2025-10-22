@@ -54,6 +54,7 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 12px 500px rgba(15, 23, 42, 0.09);
 }
 
 .postCard:hover {
@@ -99,7 +100,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 0.6rem;
-    margin-top: -4rem;
+    margin-top: -2.5rem;
 }
 
 .postMeta {
@@ -109,7 +110,7 @@
 }
 
 .postTitle {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     font-family: var(--font-geist-mono), sans-serif;
     margin: 0.25rem 0;

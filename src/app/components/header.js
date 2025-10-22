@@ -3,9 +3,13 @@
 import { useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Function to close the mobile menu
+  const handleCloseMenu = () => setMenuOpen(false);
 
   return (
     <header className={styles.header}>
@@ -23,17 +27,17 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className={styles.nav}>
-          <a href="/">Home</a>
-          <a href="/blog/1">Blog</a>
-          <a href="/about">About Us</a>
-          <a href="/contact-us">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/blog/1">Blog</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="/contact-us">Contact</Link>
         </nav>
 
         {/* Action Section */}
         <div className={styles.actionSection}>
-          <a href="#" className={styles.downloadBtn}>
+          <Link href="#" className={styles.downloadBtn}>
             Download App
-          </a>
+          </Link>
 
           <Image
             src="https://iili.io/K8HJc9S.png"
@@ -49,10 +53,10 @@ export default function Header() {
       {/* Mobile Menu (appears BELOW header) */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ""}`}>
         <hr className={styles.menuDivider} />
-        <a href="/">Home</a>
-        <a href="/blog/1">Blog</a>
-        <a href="/about">About Us</a>
-        <a href="/contact-us">Contact</a>
+        <Link href="/" onClick={handleCloseMenu}>Home</Link>
+        <Link href="/blog/1" onClick={handleCloseMenu}>Blog</Link>
+        <Link href="/about" onClick={handleCloseMenu}>About Us</Link>
+        <Link href="/contact-us" onClick={handleCloseMenu}>Contact</Link>
       </div>
     </header>
   );
