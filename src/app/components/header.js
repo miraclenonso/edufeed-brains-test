@@ -23,10 +23,10 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className={styles.nav}>
-          <a href="./">Home</a>
-          <a href="./blog/1">Blog</a>
-          <a href="./about">About Us</a>
-          <a href="./contact-us">Contact</a>
+          <a href="/">Home</a>
+          <a href="/blog/1">Blog</a>
+          <a href="/about">About Us</a>
+          <a href="/contact-us">Contact</a>
         </nav>
 
         {/* Action Section */}
@@ -49,10 +49,10 @@ export default function Header() {
       {/* Mobile Menu (appears BELOW header) */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ""}`}>
         <hr className={styles.menuDivider} />
-        <a href="./">Home</a>
-        <a href="./blog/1">Blog</a>
-        <a href="./about">About Us</a>
-        <a href="./contact-us">Contact</a>
+        <a href="/">Home</a>
+        <a href="/blog/1">Blog</a>
+        <a href="/about">About Us</a>
+        <a href="/contact-us">Contact</a>
       </div>
     </header>
   );

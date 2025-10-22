@@ -11,24 +11,24 @@ export default function Footer() {
           <div>
             <h3 className={styles.heading}>Quick Links</h3>
             <ul className={styles.list}>
-              <li><a href="./" className={styles.link}>Home</a></li>
-              <li><a href="./blog/1" className={styles.link}>Blog</a></li>
+              <li><a href="/" className={styles.link}>Home</a></li>
+              <li><a href="/blog/1" className={styles.link}>Blog</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className={styles.heading}>Company</h3>
             <ul className={styles.list}>
-              <li><a href="./about" className={styles.link}>About Us</a></li>
-              <li><a href="./contact-us" className={styles.link}>Contact</a></li>
+              <li><a href="/about" className={styles.link}>About Us</a></li>
+              <li><a href="/contact-us" className={styles.link}>Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className={styles.heading}>Legal</h3>
             <ul className={styles.list}>
-              <li><a href="./privacy-policy" className={styles.link}>Privacy Policy</a></li>
-              <li><a href="./disclaimer" className={styles.link}>Disclaimer</a></li>
+              <li><a href="/privacy-policy" className={styles.link}>Privacy Policy</a></li>
+              <li><a href="/disclaimer" className={styles.link}>Disclaimer</a></li>
             </ul>
           </div>
         </div>
