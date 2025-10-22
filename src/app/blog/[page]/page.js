@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import styles from "../page.module.css";
 
@@ -17,86 +17,118 @@ export default function BlogPage() {
 
   const currentPage = Number(page) || 1;
 
-  /** -------------------------------
-   * Fetch posts (with category, search & pagination)
-   * ------------------------------- **/
+  // Decode HTML entities
+  const decodeHTML = (html) => {
+    if (!html) return "";
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
+  // Strip HTML tags and decode
+  const plainTextFromHTML = (html, max = 180) => {
+    if (!html) return "";
+    const stripped = html.replace(/<[^>]+>/g, "");
+    return decodeHTML(stripped).trim().slice(0, max) + (stripped.length > max ? "..." : "");
+  };
+
+  /** Fetch posts (title-only search included) */
   const fetchPosts = async (categoryId = "home", query = "", pageNumber = 1) => {
     let url = `https://edufeedbrains.com/wp-json/wp/v2/posts?per_page=15&page=${pageNumber}&_embed`;
     if (categoryId !== "home") url += `&categories=${categoryId}`;
     if (query) url += `&search=${encodeURIComponent(query)}`;
 
     const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) {
+      console.error("WP posts fetch failed:", res.status);
+      return { data: [], total: 1 };
+    }
+
     const data = await res.json();
     const total = res.headers.get("X-WP-TotalPages") || 1;
-    return { data, total: Number(total) };
+
+    // ✅ Filter by title only (case-insensitive)
+    const titleOnly = query
+      ? data.filter((post) =>
+          decodeHTML(post.title.rendered).toLowerCase().includes(query.toLowerCase())
+        )
+      : data;
+
+    return { data: titleOnly, total: Number(total) };
   };
 
-  /** -------------------------------
-   * Fetch categories
-   * ------------------------------- **/
+  /** Fetch categories (excluding 'Uncategorized') */
   const fetchCategories = async () => {
-    const res = await fetch(
-      `https://edufeedbrains.com/wp-json/wp/v2/categories?per_page=20`,
-      { cache: "no-store" }
+    const res = await fetch(`https://edufeedbrains.com/wp-json/wp/v2/categories?per_page=50`, {
+      cache: "no-store",
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+
+    // ✅ Remove "Uncategorized" category
+    const filtered = data.filter(
+      (cat) => cat.name.toLowerCase() !== "uncategorized"
     );
-    return await res.json();
+
+    return filtered;
   };
 
-  /** -------------------------------
-   * Preload content before rendering
-   * ------------------------------- **/
-  React.useMemo(async () => {
-    setLoading(true);
-    try {
-      const [catData, postData] = await Promise.all([
-        fetchCategories(),
-        fetchPosts(activeCategory, searchQuery, currentPage),
-      ]);
-      setCategories(catData);
-      setPosts(postData.data);
-      setTotalPages(postData.total);
-    } catch (err) {
-      console.error("Error loading content:", err);
-    } finally {
-      setLoading(false);
-    }
-  }, [activeCategory, currentPage]);
+  /** Initial load & page param watcher */
+  useEffect(() => {
+    let mounted = true;
+    const load = async () => {
+      setLoading(true);
+      try {
+        const [catData, postData] = await Promise.all([
+          fetchCategories(),
+          fetchPosts(activeCategory, searchQuery, currentPage),
+        ]);
+        if (!mounted) return;
+        setCategories(catData);
+        setPosts(postData.data);
+        setTotalPages(postData.total);
+      } catch (err) {
+        console.error("Error loading data:", err);
+        if (mounted) {
+          setCategories([]);
+          setPosts([]);
+        }
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    };
+    load();
+    return () => {
+      mounted = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage]);
 
-  /** -------------------------------
-   * Handle category click
-   * ------------------------------- **/
+  /** Category click */
   const handleCategoryClick = async (categoryId) => {
     setActiveCategory(categoryId);
-    router.push(`/blog/1`);
     setLoading(true);
+    router.push(`/blog/1`);
     const postData = await fetchPosts(categoryId, searchQuery, 1);
     setPosts(postData.data);
     setTotalPages(postData.total);
     setLoading(false);
   };
 
-  /** -------------------------------
-   * Handle pagination
-   * ------------------------------- **/
-  const handleNextPage = async () => {
-    if (currentPage < totalPages) {
-      router.push(`/blog/${currentPage + 1}`);
-    }
+  /** Pagination */
+  const handleNextPage = () => {
+    if (currentPage < totalPages) router.push(`/blog/${currentPage + 1}`);
   };
 
-  const handlePrevPage = async () => {
-    if (currentPage > 1) {
-      router.push(`/blog/${currentPage - 1}`);
-    }
+  const handlePrevPage = () => {
+    if (currentPage > 1) router.push(`/blog/${currentPage - 1}`);
   };
 
-  /** -------------------------------
-   * Handle search
-   * ------------------------------- **/
+  /** Search (title-only) */
   const handleSearch = async (e) => {
     e.preventDefault();
-    router.push(`/blog/1`);
     setLoading(true);
+    router.push(`/blog/1`);
     const postData = await fetchPosts(activeCategory, searchQuery, 1);
     setPosts(postData.data);
     setTotalPages(postData.total);
@@ -106,12 +138,14 @@ export default function BlogPage() {
   return (
     <div className={styles.blogContainer}>
       {loading ? (
-        <p>Loading content...</p>
+        <div className={styles.loadingWrapper}>
+          <div className={styles.spinner}></div>
+        </div>
       ) : (
         <>
           <h1 className={styles.mainTitle}>Our Blog</h1>
 
-          {/* Search & mobile category filters */}
+          {/* Search + Mobile Categories */}
           <div className={styles.mobileFilters}>
             <form onSubmit={handleSearch} className={styles.searchBar}>
               <div className={styles.searchContainer}>
@@ -122,8 +156,8 @@ export default function BlogPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={styles.searchInput}
                 />
-                <button type="submit" className={styles.searchButton}>
-                  Search
+                <button type="submit" className={styles.searchButton} aria-label="Search">
+                  <span className="material-symbols-outlined">search</span>
                 </button>
               </div>
             </form>
@@ -131,11 +165,7 @@ export default function BlogPage() {
             <div className={styles.mobileCategories}>
               <a
                 onClick={() => handleCategoryClick("home")}
-                className={
-                  activeCategory === "home"
-                    ? styles.activeCategory
-                    : styles.categoryItem
-                }
+                className={activeCategory === "home" ? styles.activeCategory : styles.categoryItem}
               >
                 Home
               </a>
@@ -144,11 +174,7 @@ export default function BlogPage() {
                 <a
                   key={cat.id}
                   onClick={() => handleCategoryClick(cat.id)}
-                  className={
-                    activeCategory === cat.id
-                      ? styles.activeCategory
-                      : styles.categoryItem
-                  }
+                  className={activeCategory === cat.id ? styles.activeCategory : styles.categoryItem}
                 >
                   {cat.name}
                 </a>
@@ -157,11 +183,16 @@ export default function BlogPage() {
           </div>
 
           <div className={styles.gridLayout}>
-            {/* Main Posts Section */}
-            <div className={styles.postsColumn}>
+            <div className={styles.postsGrid}>
               {posts.length > 0 ? (
-                <>
-                  {posts.map((post) => (
+                posts.map((post) => {
+                  const featured =
+                    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                    "https://edufeedbrains.com/wp-content/uploads/2024/09/default-image.jpg";
+                  const titleText = decodeHTML(post.title.rendered);
+                  const excerptText = plainTextFromHTML(post.excerpt.rendered, 180);
+
+                  return (
                     <article key={post.id} className={styles.postCard}>
                       <div className={styles.imageWrapper}>
                         <a
@@ -170,23 +201,14 @@ export default function BlogPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <img
-                            src={
-                              post._embedded?.["wp:featuredmedia"]?.[0]
-                                ?.source_url ||
-                              "https://edufeedbrains.com/wp-content/uploads/2024/09/default-image.jpg"
-                            }
-                            alt={post.title.rendered}
-                            className={styles.postImage}
-                          />
+                          <img src={featured} alt={titleText} className={styles.postImage} />
                         </a>
                       </div>
 
                       <div className={styles.postContent}>
                         <p className={styles.postMeta}>
-                          {post._embedded?.author?.[0]?.name ||
-                            "Edufeed Brains"}{" "}
-                          | {new Date(post.date).toLocaleDateString()}
+                          {post._embedded?.author?.[0]?.name || "Edufeed Brains"} |{" "}
+                          {new Date(post.date).toLocaleDateString()}
                         </p>
 
                         <h2 className={styles.postTitle}>
@@ -196,115 +218,42 @@ export default function BlogPage() {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            {post.title.rendered}
+                            {titleText}
                           </a>
                         </h2>
 
-                        <p
-                          className={styles.postExcerpt}
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              post.excerpt.rendered
-                                .replace(/<[^>]+>/g, "")
-                                .slice(0, 180) + "...",
-                          }}
-                        />
-
-                        <a
-                          href={post.link}
-                          className={styles.readMore}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Read More{" "}
-                          <span className="material-symbols-outlined">
-                            arrow_forward
-                          </span>
-                        </a>
+                        <p className={styles.postExcerpt}>{excerptText}</p>
                       </div>
                     </article>
-                  ))}
-
-                  {/* Pagination */}
-                  <nav className={styles.pagination}>
-                    <button
-                      onClick={handlePrevPage}
-                      disabled={currentPage === 1}
-                      className={styles.pageButton}
-                    >
-                      Previous
-                    </button>
-
-                    <div className={styles.pageNumbers}>
-                      <span className={styles.activePage}>{currentPage}</span> /{" "}
-                      <span>{totalPages}</span>
-                    </div>
-
-                    <button
-                      onClick={handleNextPage}
-                      disabled={currentPage === totalPages}
-                      className={styles.pageButton}
-                    >
-                      Next
-                    </button>
-                  </nav>
-                </>
+                  );
+                })
               ) : (
                 <p>No posts found.</p>
               )}
-            </div>
 
-            {/* Sidebar */}
-            <aside className={styles.sidebar}>
-              <div className={styles.sidebarBox}>
-                {/* Search Bar */}
-                <form onSubmit={handleSearch} className={styles.searchBar}>
-                  <div className={styles.searchContainer}>
-                    <input
-                      type="text"
-                      placeholder="Search articles..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className={styles.searchInput}
-                    />
-                    <button type="submit" className={styles.searchButton}>
-                      Search
-                    </button>
-                  </div>
-                </form>
+              {/* Pagination */}
+              <nav className={styles.pagination}>
+                <button
+                  onClick={handlePrevPage}
+                  disabled={currentPage === 1}
+                  className={styles.pageButton}
+                >
+                  Previous
+                </button>
 
-                {/* Categories */}
-                <div>
-                  <h3 className={styles.sidebarTitle}>Categories</h3>
-                  <div className={styles.categories}>
-                    <a
-                      onClick={() => handleCategoryClick("home")}
-                      className={
-                        activeCategory === "home"
-                          ? styles.activeCategory
-                          : styles.categoryItem
-                      }
-                    >
-                      Home
-                    </a>
-
-                    {categories.map((cat) => (
-                      <a
-                        key={cat.id}
-                        onClick={() => handleCategoryClick(cat.id)}
-                        className={
-                          activeCategory === cat.id
-                            ? styles.activeCategory
-                            : styles.categoryItem
-                        }
-                      >
-                        {cat.name}
-                      </a>
-                    ))}
-                  </div>
+                <div className={styles.pageNumbers}>
+                  <span className={styles.activePage}>{currentPage}</span> / <span>{totalPages}</span>
                 </div>
-              </div>
-            </aside>
+
+                <button
+                  onClick={handleNextPage}
+                  disabled={currentPage === totalPages}
+                  className={styles.pageButton}
+                >
+                  Next
+                </button>
+              </nav>
+            </div>
           </div>
         </>
       )}
